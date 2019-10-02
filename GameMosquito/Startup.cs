@@ -24,6 +24,7 @@ namespace GameMosquito
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,11 +47,22 @@ namespace GameMosquito
 
             app.UseAuthorization();
 
+            app.UseMvc();
+
             app.UseEndpoints(endpoints =>
             {
+
+                //endpoints.MapControllerRoute(
+                //    name: "GamesByReleaseDate",
+                //    pattern: "games/released/{year}/{month}",
+                //    defaults: new { controller = "Games", action = "ByReleaseDate"},
+                //    constraints: new { year = @"\d{4}", month = @"\d{2}"}
+                //    );
+
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
             });
         }
     }

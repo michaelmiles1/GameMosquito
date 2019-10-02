@@ -16,7 +16,19 @@ namespace GameMosquito.Controllers
         {
             var game = new Game() {Name = "Grand Theft Auto 5"};
 
+            //ViewData["Game"] = game;
+            //ViewBag.Game = game
+            //var viewResult = new ViewResult();
+            //viewResult.ViewData.Model
+
             return View(game);
         }
+
+        [Route("games/released/{year}/{month}")]
+        public ActionResult ByReleaseDate(int year, int month)
+        {
+            return Content(year + "/" + month);
+        }
+
     }
 }

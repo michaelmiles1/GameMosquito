@@ -12,4 +12,7 @@
     <Folder Include="Views\Games\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Shared\_NavBar.cshtml" />
+  </ItemGroup>
 </Project>

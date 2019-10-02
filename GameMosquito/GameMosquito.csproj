@@ -10,5 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Views\Games\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>
